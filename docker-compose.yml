@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  python-backend:
+    build: .
+    ports:
+      - "8080:8080"
