@@ -6,8 +6,8 @@ app = Flask(__name__)
 CORS(app)
 
 @app.route("/")
-def hello_world():
-    return "<p>Hello World!</p>"
+def Live():
+    return "<p>We are live!</p>"
 
 
 @app.route("/analyze-sentiment", methods=['POST'])
