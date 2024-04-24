@@ -1,8 +1,9 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
+from flask_cors import CORS
 from textblob import TextBlob
 
 app = Flask(__name__)
-
+CORS(app)
 
 @app.route("/")
 def hello_world():
@@ -14,7 +15,7 @@ def analyze_sentiment():
     text = request.form['text']
     blob = TextBlob(text)
     sentiment_value = blob.sentiment
-    return {"sentiment_value": sentiment_value}
+    return jsonify({"sentiment_value": sentiment_value})
 
 
 if __name__ == "__main__":
